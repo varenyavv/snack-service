@@ -3,6 +3,7 @@ package com.dla.snackservice.service;
 import com.dla.snackservice.dto.SnackDto;
 import com.dla.snackservice.model.Snack;
 import com.dla.snackservice.repository.SnackRepository;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,9 @@ public class SnackService {
        }
 
        return retrievedSnack.get();
+    }
+
+    public List<Snack> getAllSnacks() {
+        return snackRepository.findAll();
     }
 }
